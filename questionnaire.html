@@ -69,6 +69,43 @@
     }
 
 
+
+    .range-card {
+      gap: 10px;
+    }
+
+    .range-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .range-value {
+      color: #0f172a;
+      font-size: 14px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .range-input {
+      width: 100%;
+      accent-color: #16a34a;
+      cursor: pointer;
+    }
+
+    .range-limits {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 8px;
+      color: #64748b;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+
     .form-actions {
       display: grid;
       grid-template-columns: 1.3fr 0.7fr;
@@ -136,7 +173,44 @@
     }
 
     @media (max-width: 720px) {
-      .form-actions {
+  
+    .range-card {
+      gap: 10px;
+    }
+
+    .range-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .range-value {
+      color: #0f172a;
+      font-size: 14px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .range-input {
+      width: 100%;
+      accent-color: #16a34a;
+      cursor: pointer;
+    }
+
+    .range-limits {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 8px;
+      color: #64748b;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+
+    .form-actions {
         grid-template-columns: 1fr;
       }
     }
@@ -186,6 +260,17 @@
         Submitting this form is the first step towards Diamond Connect access.
       </p>
 
+      <p>
+        To learn more about Diamond Solutions, visit
+        <a
+          class="trust-link"
+          href="https://www.thediamondsolutions.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          thediamondsolutions.com
+        </a>.
+      </p>
     </section>
 
     <form id="contractorForm" action="thank-you.html" method="get">
@@ -318,14 +403,6 @@
             </select>
           </div>
 
-          <div class="form-card full">
-            <label for="project_fit">What type or size of commercial work usually fits your company best?</label>
-            <textarea id="project_fit" name="project_fit" placeholder="Example: sealcoat and stripe jobs, small asphalt repairs, paving projects over $25k, concrete repairs, depends on location, etc."></textarea>
-            <span class="form-helper">
-              Optional. This helps Diamond understand what kind of commercial work usually makes sense for your company.
-            </span>
-          </div>
-
           <div class="form-card">
             <label for="source">How did you hear about Diamond?</label>
             <select id="source" name="source">
@@ -339,6 +416,54 @@
               <option>Social media</option>
               <option>Other</option>
             </select>
+          </div>
+
+          <div class="form-card range-card">
+            <div class="range-header">
+              <label for="minimum_project_size">Minimum project size</label>
+              <span class="range-value" id="minimumProjectSizeValue">$5,000</span>
+            </div>
+            <input
+              class="range-input"
+              id="minimum_project_size"
+              name="minimum_project_size"
+              type="range"
+              min="5000"
+              max="500000"
+              step="5000"
+              value="5000"
+            />
+            <div class="range-limits">
+              <span>$5k</span>
+              <span>$500k</span>
+            </div>
+            <span class="form-helper">
+              Optional. Move the slider if your company usually avoids smaller commercial work.
+            </span>
+          </div>
+
+          <div class="form-card range-card">
+            <div class="range-header">
+              <label for="maximum_project_size">Maximum project size</label>
+              <span class="range-value" id="maximumProjectSizeValue">$500,000+</span>
+            </div>
+            <input
+              class="range-input"
+              id="maximum_project_size"
+              name="maximum_project_size"
+              type="range"
+              min="5000"
+              max="500000"
+              step="5000"
+              value="500000"
+            />
+            <div class="range-limits">
+              <span>$5k</span>
+              <span>$500k+</span>
+            </div>
+            <span class="form-helper">
+              Optional. This gives Diamond a quick sense of the project size range that usually fits.
+            </span>
           </div>
 
           <div class="form-card full">
@@ -388,6 +513,48 @@
       const zip = document.getElementById("zip").value.trim();
 
       officeCombined.value = [street, city, state, zip].filter(Boolean).join(", ");
+    }
+
+    function formatProjectSize(value, showPlusAtMax = false) {
+      const numberValue = Number(value);
+      const formatted = new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+        maximumFractionDigits: 0
+      }).format(numberValue);
+
+      return showPlusAtMax && numberValue >= 500000 ? `${formatted}+` : formatted;
+    }
+
+    function syncProjectSizeSliders(changedSlider) {
+      const minimumSlider = document.getElementById("minimum_project_size");
+      const maximumSlider = document.getElementById("maximum_project_size");
+      const minimumValue = document.getElementById("minimumProjectSizeValue");
+      const maximumValue = document.getElementById("maximumProjectSizeValue");
+
+      if (!minimumSlider || !maximumSlider || !minimumValue || !maximumValue) {
+        return;
+      }
+
+      if (changedSlider === "minimum" && Number(minimumSlider.value) > Number(maximumSlider.value)) {
+        maximumSlider.value = minimumSlider.value;
+      }
+
+      if (changedSlider === "maximum" && Number(maximumSlider.value) < Number(minimumSlider.value)) {
+        minimumSlider.value = maximumSlider.value;
+      }
+
+      minimumValue.textContent = formatProjectSize(minimumSlider.value);
+      maximumValue.textContent = formatProjectSize(maximumSlider.value, true);
+    }
+
+    const minimumProjectSizeSlider = document.getElementById("minimum_project_size");
+    const maximumProjectSizeSlider = document.getElementById("maximum_project_size");
+
+    if (minimumProjectSizeSlider && maximumProjectSizeSlider) {
+      minimumProjectSizeSlider.addEventListener("input", () => syncProjectSizeSliders("minimum"));
+      maximumProjectSizeSlider.addEventListener("input", () => syncProjectSizeSliders("maximum"));
+      syncProjectSizeSliders();
     }
 
     form.addEventListener("submit", async function (event) {
