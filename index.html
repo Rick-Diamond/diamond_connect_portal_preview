@@ -165,6 +165,35 @@
       line-height: 1.45;
     }
 
+
+    .company-site-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: #475569;
+      font-size: 13px;
+      font-weight: 800;
+      padding: 9px 12px;
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      border-radius: 999px;
+      background: #ffffff;
+      white-space: nowrap;
+    }
+
+    .company-site-link:hover {
+      color: #0f172a;
+      border-color: rgba(15, 23, 42, 0.18);
+    }
+
+    .topbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
     .service-note {
       margin-top: 12px;
       color: #64748b;
@@ -194,7 +223,17 @@
         <img class="brand-logo" src="diamond-solutions-logo.png" alt="Diamond Solutions logo" />
       </a>
 
-      <div class="top-status">Diamond Connect</div>
+      <div class="topbar-actions">
+        <a
+          class="company-site-link"
+          href="https://www.thediamondsolutions.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Company Website
+        </a>
+
+      </div>
     </div>
 
     <section class="hero">
