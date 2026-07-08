@@ -33,6 +33,42 @@
     }
 
 
+    .company-site-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: #475569;
+      font-size: 13px;
+      font-weight: 800;
+      padding: 9px 12px;
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      border-radius: 999px;
+      background: #ffffff;
+      white-space: nowrap;
+    }
+
+    .company-site-link:hover {
+      color: #0f172a;
+      border-color: rgba(15, 23, 42, 0.18);
+    }
+
+    .topbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .trust-link {
+      color: #0f172a;
+      font-weight: 800;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+
     .form-actions {
       display: grid;
       grid-template-columns: 1.3fr 0.7fr;
@@ -116,7 +152,18 @@
         <img class="brand-logo" src="diamond-solutions-logo.png" alt="Diamond Solutions logo" />
       </a>
 
-      <div class="top-status">Company Info</div>
+      <div class="topbar-actions">
+        <a
+          class="company-site-link"
+          href="https://www.thediamondsolutions.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Company Website
+        </a>
+
+        <div class="top-status">Company Info</div>
+      </div>
     </div>
 
     <section class="hero">
@@ -137,6 +184,18 @@
       <p>
         Diamond Solutions is always looking to build relationships with reliable contractors in the markets we serve.
         Submitting this form is the first step towards Diamond Connect access.
+      </p>
+
+      <p>
+        To learn more about Diamond Solutions, visit
+        <a
+          class="trust-link"
+          href="https://www.thediamondsolutions.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          thediamondsolutions.com
+        </a>.
       </p>
     </section>
 
@@ -260,13 +319,22 @@
 
         <div class="form-grid">
           <div class="form-card">
-            <label for="text_alerts">Can Diamond text you?</label>
-            <select id="text_alerts" name="text_alerts">
+            <label for="preferred_communication">Preferred method of communication</label>
+            <select id="preferred_communication" name="preferred_communication">
               <option value="">Select one</option>
-              <option>Yes</option>
-              <option>No</option>
-              <option>Depends who receives the text</option>
+              <option>Text</option>
+              <option>Email</option>
+              <option>Phone call</option>
+              <option>All of the above work</option>
             </select>
+          </div>
+
+          <div class="form-card full">
+            <label for="project_fit">What type or size of commercial work usually fits your company best?</label>
+            <textarea id="project_fit" name="project_fit" placeholder="Example: sealcoat and stripe jobs, small asphalt repairs, paving projects over $25k, concrete repairs, depends on location, etc."></textarea>
+            <span class="form-helper">
+              Optional. This helps Diamond understand what kind of commercial work usually makes sense for your company.
+            </span>
           </div>
 
           <div class="form-card">
@@ -359,7 +427,7 @@
         window.location.href = "thank-you.html";
       } catch (error) {
         submitButton.disabled = false;
-        submitButton.textContent = "Submit Company Information";
+        submitButton.textContent = "Submit Company Information →";
         formMessage.className = "form-message error";
         formMessage.textContent = "Something went wrong. Please try again or contact Diamond Solutions directly.";
       }
