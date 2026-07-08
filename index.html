@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Work with Diamond Solutions | Diamond Connect</title>
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    .tight-section {
+      padding-top: 28px;
+      padding-bottom: 28px;
+    }
+
+    .qa-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .qa-card {
+      background: #ffffff;
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
+    }
+
+    .qa-card strong {
+      display: block;
+      margin-bottom: 6px;
+      color: #0f172a;
+      font-size: 16px;
+      line-height: 1.25;
+    }
+
+    .qa-card span {
+      display: block;
+      color: #475569;
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .connect-strip {
+      display: grid;
+      grid-template-columns: 1.1fr repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+      padding: 16px;
+      border-radius: 20px;
+      background: #0f172a;
+      color: #ffffff;
+    }
+
+    .connect-strip-intro {
+      padding: 8px;
+    }
+
+    .connect-strip-intro strong {
+      display: block;
+      font-size: 17px;
+      line-height: 1.25;
+      margin-bottom: 6px;
+    }
+
+    .connect-strip-intro span {
+      display: block;
+      color: rgba(255,255,255,0.72);
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .connect-item {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 16px;
+      padding: 14px;
+    }
+
+    .connect-item small {
+      display: block;
+      color: rgba(255,255,255,0.55);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .connect-item strong {
+      display: block;
+      color: #ffffff;
+      font-size: 14px;
+      line-height: 1.35;
+    }
+
+    .compact-samples {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .sample-card.compact h3 {
+      margin-bottom: 12px;
+    }
+
+    .sample-card.compact .scope-list li {
+      margin-bottom: 6px;
+    }
+
+    .fit-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .fit-card {
+      background: #ffffff;
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
+    }
+
+    .fit-card.featured {
+      background: #f8fafc;
+      border-color: rgba(37, 99, 235, 0.22);
+    }
+
+    .fit-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 999px;
+      background: #0f172a;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 900;
+      margin-bottom: 14px;
+    }
+
+    .fit-card.featured .fit-icon {
+      background: #2563eb;
+    }
+
+    .fit-card strong {
+      display: block;
+      color: #0f172a;
+      font-size: 16px;
+      line-height: 1.25;
+      margin-bottom: 8px;
+    }
+
+    .fit-card span {
+      display: block;
+      color: #475569;
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .service-note {
+      margin-top: 12px;
+      color: #64748b;
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    @media (max-width: 900px) {
+      .compact-samples,
+      .fit-grid,
+      .connect-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .qa-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+
+    <div class="topbar">
+      <a class="brand" href="index.html" aria-label="Diamond Solutions">
+        <img class="brand-logo" src="diamond-solutions-logo.png" alt="Diamond Solutions logo" />
+      </a>
+
+      <div class="top-status">Diamond Connect</div>
+    </div>
+
+    <section class="hero">
+      <div class="eyebrow">
+        <span class="dot"></span>
+        <span>Work with Diamond Solutions</span>
+      </div>
+
+      <h1>Commercial parking lot maintenance work, shared clearly.</h1>
+
+      <p class="hero-copy">
+        Diamond Solutions is always looking to build relationships with reliable contractors in the markets we serve.
+        If your company performs commercial asphalt, concrete, sealcoating, striping, or related work, share your
+        company info so we can understand your services, markets, and commercial work fit.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="questionnaire.html">Share your company info</a>
+        <a class="btn btn-outline" href="#sample-opportunities">See example work</a>
+      </div>
+    </section>
+
+    <section class="quick-trust" aria-label="Diamond Solutions context">
+      <div class="trust-card">
+        <strong>200+ active projects</strong>
+        <span>Approximate current Diamond-managed project activity.</span>
+      </div>
+
+      <div class="trust-card">
+        <strong>$24M+ accepted work</strong>
+        <span>Approximate accepted work volume for Diamond-managed projects.</span>
+      </div>
+
+      <div class="trust-card">
+        <strong>Clear work packages</strong>
+        <span>Scope, timing, notes, photos, and pricing organized in one place.</span>
+      </div>
+    </section>
+
+    <section class="section intro-section tight-section">
+      <div class="section-label">The basic idea</div>
+
+      <h2>Diamond wants to know reliable contractors before the next project needs them.</h2>
+
+      <p>
+        This page helps Diamond understand who you are, what work your company performs, and where you normally work.
+        If there is a match, Diamond may follow up and share available work through Diamond Connect.
+      </p>
+
+      <div class="qa-grid">
+        <div class="qa-card">
+          <strong>Who is Diamond Solutions?</strong>
+          <span>
+            A commercial parking lot maintenance company managing work across multiple markets.
+          </span>
+        </div>
+
+        <div class="qa-card">
+          <strong>Why are we asking?</strong>
+          <span>
+            We are building relationships with contractors before the next project needs a reliable local partner.
+          </span>
+        </div>
+
+        <div class="qa-card">
+          <strong>What is Diamond Connect?</strong>
+          <span>
+            Diamond Connect is the partner portal approved contractors may use to review available work, including
+            scope, timing, notes, photos, and pricing.
+          </span>
+        </div>
+
+        <div class="qa-card">
+          <strong>What happens if there is a fit?</strong>
+          <span>
+            Diamond may follow up, review next steps, and share matching opportunities through Diamond Connect.
+          </span>
+        </div>
+      </div>
+
+      <div class="connect-strip" aria-label="How Diamond Connect helps contractors review work">
+        <div class="connect-strip-intro">
+          <strong>Not leads. Not endless bid chasing.</strong>
+          <span>Diamond Connect is meant to make available Diamond-managed work easier to review.</span>
+        </div>
+
+        <div class="connect-item">
+          <small>Review</small>
+          <strong>See the scope, market, timing, notes, photos, and pricing.</strong>
+        </div>
+
+        <div class="connect-item">
+          <small>Decide</small>
+          <strong>Accept or pass based on whether the work fits your company.</strong>
+        </div>
+
+        <div class="connect-item">
+          <small>Perform</small>
+          <strong>Do good work, communicate clearly, and build trust for future work.</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="section tight-section" id="sample-opportunities">
+      <div class="section-label">Example work</div>
+
+      <h2>Examples of commercial work Diamond manages.</h2>
+
+      <p>
+        These examples are representative only. They show the type and size of work Diamond may share when an approved
+        contractor matches the service, market, schedule, and project need.
+      </p>
+
+      <div class="compact-samples">
+
+        <article class="sample-card compact">
+          <div class="sample-top">
+            <span class="sample-type">Large Maintenance Project</span>
+            <span class="sample-market">Virginia Market</span>
+          </div>
+
+          <h3>Full-site maintenance package</h3>
+
+          <ul class="scope-list">
+            <li>Asphalt repair</li>
+            <li>Concrete repair</li>
+            <li>Crack seal</li>
+            <li>Sealcoating</li>
+            <li>Striping and markings</li>
+          </ul>
+
+          <div class="price-box">
+            <small>Pricing</small>
+            <strong>Shown in Diamond Connect when available</strong>
+          </div>
+        </article>
+
+        <article class="sample-card compact">
+          <div class="sample-top">
+            <span class="sample-type">Multi-Service Project</span>
+            <span class="sample-market">Indiana Market</span>
+          </div>
+
+          <h3>Mill, overlay, and maintenance work</h3>
+
+          <ul class="scope-list">
+            <li>Mill and overlay</li>
+            <li>Concrete sidewalk repair</li>
+            <li>Crack seal</li>
+            <li>Sealcoating</li>
+            <li>ADA striping and layout</li>
+          </ul>
+
+          <div class="price-box">
+            <small>Pricing</small>
+            <strong>Shown in Diamond Connect when available</strong>
+          </div>
+        </article>
+
+        <article class="sample-card compact">
+          <div class="sample-top">
+            <span class="sample-type">Large Asphalt Project</span>
+            <span class="sample-market">Florida Market</span>
+          </div>
+
+          <h3>Mill and pave with striping</h3>
+
+          <ul class="scope-list">
+            <li>3&quot; mill and pave</li>
+            <li>Base grading and compaction</li>
+            <li>Asphalt placement</li>
+            <li>Full-lot striping</li>
+            <li>Weekend availability</li>
+          </ul>
+
+          <div class="price-box">
+            <small>Pricing</small>
+            <strong>Shown in Diamond Connect when available</strong>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="disclaimer">
+        These examples are not currently available jobs unless specifically presented through Diamond Connect.
+        Live customer names, exact addresses, current availability, final scopes, and confidential pricing are shared
+        only with approved contractors.
+      </div>
+    </section>
+
+    <section class="section tight-section">
+      <div class="section-label">Services</div>
+
+      <h2>Services Diamond hires contractors for.</h2>
+
+      <p>
+        Diamond works with contractors across these commercial parking lot maintenance and related service categories.
+      </p>
+
+      <div class="checklist">
+        <div class="check">Base R&amp;R</div>
+        <div class="check">Asphalt R&amp;R</div>
+        <div class="check">Mill &amp; Pave</div>
+        <div class="check">Mill &amp; Overlay</div>
+        <div class="check">Paving</div>
+        <div class="check">Infrared</div>
+        <div class="check">Tack &amp; Patch</div>
+        <div class="check">Speed Bumps</div>
+        <div class="check">Concrete R&amp;R</div>
+        <div class="check">Concrete Install</div>
+        <div class="check">Curbing</div>
+        <div class="check">Drain Pads</div>
+        <div class="check">Risers</div>
+        <div class="check">Bollards</div>
+        <div class="check">Parking Stops</div>
+        <div class="check">Joint Seal</div>
+        <div class="check">Truncated Dome Install</div>
+        <div class="check">Catch Basin</div>
+        <div class="check">Drain Tile</div>
+        <div class="check">Crack Seal</div>
+        <div class="check">Sealcoating</div>
+        <div class="check">Striping</div>
+        <div class="check">Signage</div>
+        <div class="check">Core Drilling</div>
+      </div>
+
+      <p class="service-note">
+        Select matching services on the company info form so Diamond can better understand where your company may fit.
+      </p>
+    </section>
+
+    <section class="section tight-section">
+      <div class="section-label">Good fit</div>
+
+      <h2>A good Diamond contractor relationship usually starts with the basics.</h2>
+
+      <p>
+        Diamond is not looking for every contractor in every market. We are looking for reliable companies that can take
+        clear commercial scopes, communicate well, and perform the work when the opportunity fits.
+      </p>
+
+      <div class="fit-grid">
+        <div class="fit-card">
+          <div class="fit-icon">01</div>
+          <strong>Commercial work experience</strong>
+          <span>Parking lots, commercial sites, access planning, traffic flow, tenants, schedules, and finished presentation.</span>
+        </div>
+
+        <div class="fit-card">
+          <div class="fit-icon">02</div>
+          <strong>Clear communication</strong>
+          <span>Responsive updates before, during, and after the job help keep projects moving and customers informed.</span>
+        </div>
+
+        <div class="fit-card">
+          <div class="fit-icon">03</div>
+          <strong>Work that fits your company</strong>
+          <span>The best opportunities are the ones that match the services, market, timing, and scope your company can handle well.</span>
+        </div>
+
+        <div class="fit-card featured">
+          <div class="fit-icon">04</div>
+          <strong>Direct performance</strong>
+          <span>Diamond is primarily looking for contractors who can perform accepted work with their own company crews and equipment.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="apply">
+      <h2>Want Diamond to know your company?</h2>
+
+      <p>
+        Share your services, markets, and company information. If there is a match, Diamond may follow up about
+        available commercial work.
+      </p>
+
+      <a class="btn btn-green" href="questionnaire.html">Share your company info</a>
+    </section>
+
+    <footer class="footer">
+      Diamond Solutions · Diamond Connect · Submission does not guarantee approval, project availability, vendor setup,
+      or Diamond Connect access. Project availability varies by market, service, schedule, contractor qualification,
+      and project demand. Approximate stats are for preview context and may change.
+    </footer>
+
+  </main>
+
+  <div class="sticky-cta">
+    <div class="sticky-inner">
+      <div class="sticky-text">
+        <strong>Want Diamond to know your company?</strong>
+        Share your services and markets.
+      </div>
+
+      <a class="btn btn-green" href="questionnaire.html">Share Company Info</a>
+    </div>
+  </div>
+
+</body>
+</html>
