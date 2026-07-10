@@ -3,24 +3,90 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Thank You | Diamond Solutions</title>
+
   <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    .next-email-card {
+      margin-top: 18px;
+      padding: 18px;
+      border-radius: 18px;
+      background: #f8fafc;
+      border: 1px solid rgba(15, 23, 42, 0.08);
+    }
+
+    .next-email-card strong {
+      display: block;
+      color: #0f172a;
+      font-size: 16px;
+      line-height: 1.35;
+      margin-bottom: 8px;
+    }
+
+    .next-email-card span {
+      display: block;
+      color: #475569;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .connect-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .connect-item {
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: #ffffff;
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      color: #0f172a;
+      font-size: 14px;
+      font-weight: 800;
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.04);
+    }
+
+    .thank-you-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 22px;
+    }
+
+    @media (max-width: 720px) {
+      .thank-you-actions .btn {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
+
 <body>
   <main class="page form-section">
+
     <div class="topbar">
       <a class="brand" href="index.html" aria-label="Diamond Solutions">
         <img class="brand-logo" src="diamond-solutions-logo.png" alt="Diamond Solutions logo" />
       </a>
+
       <div class="top-status">Submitted</div>
     </div>
 
     <section class="hero">
-      <div class="eyebrow"><span class="dot"></span> Thank you</div>
+      <div class="eyebrow">
+        <span class="dot"></span>
+        Thank you
+      </div>
+
       <h1>Your company information has been submitted.</h1>
+
       <p class="hero-copy">
-        Diamond Solutions will review your information. If your services, market, availability, and capacity match current or future work, Diamond may follow up with next steps.
+        Diamond Solutions will review your information. If your services and market look like a fit for current or future commercial work, Diamond may follow up with next steps.
       </p>
+
       <div class="hero-actions">
         <a class="btn btn-primary" href="index.html">Back to overview</a>
       </div>
@@ -28,11 +94,58 @@
 
     <section class="section">
       <div class="section-label">What happens next</div>
-      <h2>Diamond will review for fit.</h2>
+
+      <h2>Diamond will review your information for fit.</h2>
+
       <p>
-        Submission does not guarantee approval, vendor setup, project assignment, pricing, or Diamond Connect access. If there is a match, Diamond may contact you to learn more and discuss next steps.
+        Submission does not guarantee approval, vendor setup, project assignment, pricing, or Diamond Connect access.
+        If there is a match, Diamond may contact you to learn more and discuss next steps.
       </p>
+
+      <div class="next-email-card">
+        <strong>Be on the lookout for an email from Diamond Connect.</strong>
+        <span>
+          If your company is a fit, Diamond may send an invitation email with setup information, helpful videos,
+          and next steps for reviewing Diamond-managed work through Diamond Connect.
+        </span>
+      </div>
     </section>
+
+    <section class="section">
+      <div class="section-label">Diamond Connect</div>
+
+      <h2>If invited, Diamond Connect helps approved contractors review work clearly.</h2>
+
+      <p>
+        Diamond Connect is our partner platform built to make it easier for approved contractors to review project information in one place.
+      </p>
+
+      <div class="connect-list">
+        <div class="connect-item">Clear project details and documentation</div>
+        <div class="connect-item">Access to site photos and interactive maps</div>
+        <div class="connect-item">Better visibility into upcoming opportunities</div>
+        <div class="connect-item">Centralized list of current Diamond projects</div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <h2>Want to learn more about Diamond Solutions?</h2>
+
+      <p>
+        You can visit our company website while our team reviews your information.
+      </p>
+
+      <div class="thank-you-actions">
+        <a class="btn btn-green" href="https://www.thediamondsolutions.com" target="_blank" rel="noopener noreferrer">
+          Visit Diamond Solutions
+        </a>
+
+        <a class="btn btn-light" href="index.html">
+          Back to overview
+        </a>
+      </div>
+    </section>
+
   </main>
 </body>
 </html>
