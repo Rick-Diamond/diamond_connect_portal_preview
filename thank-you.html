@@ -1,3 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Share Your Company Info | Diamond Solutions</title>
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    .form-helper {
+      display: block;
+      margin-top: 6px;
+      color: #64748b;
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+    .small-note {
+      margin-top: 18px;
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: #f8fafc;
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      color: #334155;
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .form-checklist label {
+      cursor: pointer;
+    }
+
+
+    .company-site-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: #475569;
+      font-size: 13px;
+      font-weight: 800;
+      padding: 9px 12px;
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      border-radius: 999px;
+      background: #ffffff;
+      white-space: nowrap;
+    }
+
+    .company-site-link:hover {
+      color: #0f172a;
+      border-color: rgba(15, 23, 42, 0.18);
+    }
+
+    .topbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .trust-link {
+      color: #0f172a;
+      font-weight: 800;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+
+
+    .range-card {
+      gap: 10px;
+    }
+
+    .range-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .range-value {
+      color: #0f172a;
+      font-size: 14px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .range-input {
+      width: 100%;
+      accent-color: #16a34a;
+      cursor: pointer;
+    }
+
+    .range-limits {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 8px;
+      color: #64748b;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+
+    .form-actions {
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 12px;
+      align-items: center;
+      margin-top: 22px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(15, 23, 42, 0.08);
+    }
+
+    .form-actions .btn {
+      width: 100%;
+      min-height: 54px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border-radius: 16px;
+      font-size: 15px;
+      font-weight: 900;
+      text-decoration: none;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    }
+
+    .form-actions .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .form-actions .btn-submit {
+      background: linear-gradient(135deg, #16a34a, #15803d);
+      color: #ffffff;
+      border: 1px solid rgba(22, 163, 74, 0.35);
+      box-shadow: 0 14px 28px rgba(22, 163, 74, 0.24);
+    }
+
+    .form-actions .btn-submit:hover {
+      box-shadow: 0 18px 34px rgba(22, 163, 74, 0.30);
+    }
+
+    .form-actions .btn-submit:disabled {
+      cursor: not-allowed;
+      opacity: 0.7;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .form-actions .btn-back {
+      background: #ffffff;
+      color: #0f172a;
+      border: 1px solid rgba(15, 23, 42, 0.12);
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+    }
+
+    .form-actions .btn-back:hover {
+      background: #f8fafc;
+      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.10);
+    }
+
+    .button-subtext {
+      margin: 10px 0 0;
+      color: #64748b;
+      font-size: 13px;
+      line-height: 1.4;
+      text-align: center;
+    }
+
+    @media (max-width: 720px) {
+  
+    .range-card {
+      gap: 10px;
+    }
+
+    .range-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .range-value {
+      color: #0f172a;
+      font-size: 14px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .range-input {
+      width: 100%;
+      accent-color: #16a34a;
+      cursor: pointer;
+    }
+
+    .range-limits {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 8px;
+      color: #64748b;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+
+    .form-actions {
+        grid-template-columns: 1fr;
+      }
+    }
+
+  </style>
+</head>
+
 <body>
   <main class="page form-section">
 
@@ -6,67 +226,375 @@
         <img class="brand-logo" src="diamond-solutions-logo.png" alt="Diamond Solutions logo" />
       </a>
 
-      <div class="top-status">Submitted</div>
+      <div class="topbar-actions">
+        <a
+          class="company-site-link"
+          href="https://www.thediamondsolutions.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Company Website
+        </a>
+
+        <div class="top-status">Company Info</div>
+      </div>
     </div>
 
     <section class="hero">
       <div class="eyebrow">
         <span class="dot"></span>
-        Submission Received
+        Work with Diamond Solutions
       </div>
 
-      <h1>Thanks — Diamond has your company info.</h1>
+      <h1>Tell Diamond Solutions about your company.</h1>
 
-      <p class="hero-copy">
-        We’ll review what you submitted and follow up if your company looks like a fit for current or future commercial work.
-      </p>
     </section>
 
     <section class="section">
-      <div class="section-label">What happens next</div>
+      <div class="section-label">Before you start</div>
 
-      <h2>Be on the lookout for an email from Diamond Connect.</h2>
-
-      <p>
-        If there is a fit, Diamond may send you a Diamond Connect invitation email with next steps.
-        Diamond Connect is our partner platform built to make it easier for approved contractors to review Diamond-managed work.
-      </p>
+      <h2>Help us understand who you are and what work you do.</h2>
 
       <p>
-        The invitation email may include setup information, helpful videos, and details on how to review project information,
-        site photos, maps, documentation, and available opportunities through Diamond Connect.
+        Diamond Solutions is always looking to build relationships with reliable contractors in the markets we serve.
+        Submitting this form is the first step towards Diamond Connect access.
       </p>
 
-      <div class="disclaimer">
-        Submitting this form does not guarantee approval, project availability, vendor setup, or Diamond Connect access.
-        Diamond will follow up separately if additional information or documentation is needed.
-      </div>
     </section>
 
-    <section class="section">
-      <div class="section-label">Diamond Connect</div>
+    <form id="contractorForm" action="thank-you.html" method="get">
+      <input type="hidden" name="form_name" value="Diamond Connect Contractor Info" />
+      <input type="hidden" name="page_source" value="Diamond Connect Contractor Questionnaire" />
+      <input type="hidden" id="officeCombined" name="office" value="" />
 
-      <h2>If invited, Diamond Connect helps approved contractors review work clearly.</h2>
+      <section class="section">
+        <div class="section-label">Company information</div>
 
-      <div class="checklist">
-        <div class="check">Clear project details and documentation</div>
-        <div class="check">Access to site photos and interactive maps</div>
-        <div class="check">Better visibility into upcoming opportunities</div>
-        <div class="check">Centralized list of current Diamond projects</div>
-      </div>
-    </section>
+        <h2>Who should Diamond contact?</h2>
 
-    <section class="cta">
-      <h2>Want to learn more about Diamond Solutions?</h2>
+        <div class="form-grid">
+          <div class="form-card">
+            <label for="company">Company Name *</label>
+            <input id="company" name="company" required placeholder="Company name" />
+          </div>
 
-      <p>
-        You can visit our company website while our team reviews your information.
-      </p>
+          <div class="form-card">
+            <label for="contact">Primary Contact *</label>
+            <input id="contact" name="contact" required placeholder="Contact name" />
+          </div>
 
-      <a class="btn btn-green" href="https://www.thediamondsolutions.com" target="_blank" rel="noopener noreferrer">
-        Visit Diamond Solutions
-      </a>
-    </section>
+          <div class="form-card">
+            <label for="phone">Phone *</label>
+            <input id="phone" name="phone" type="tel" required placeholder="Phone number" />
+          </div>
 
+          <div class="form-card">
+            <label for="email">Email *</label>
+            <input id="email" name="email" type="email" required placeholder="Email address" />
+          </div>
+
+          <div class="form-card full">
+            <label for="street">Business Street Address *</label>
+            <input id="street" name="street" required placeholder="Street address" />
+          </div>
+
+          <div class="form-card">
+            <label for="city">City *</label>
+            <input id="city" name="city" required placeholder="City" />
+          </div>
+
+          <div class="form-card">
+            <label for="state">State *</label>
+            <input id="state" name="state" required placeholder="State" />
+          </div>
+
+          <div class="form-card">
+            <label for="zip">ZIP Code *</label>
+            <input id="zip" name="zip" required placeholder="ZIP code" />
+          </div>
+
+          <div class="form-card">
+            <label for="website">Website / Facebook</label>
+            <input id="website" name="website" placeholder="Website or Facebook page" />
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-label">Services</div>
+
+        <h2>What work does your company perform?</h2>
+
+        <p>
+          Select the services your company performs. This helps Diamond understand where your company may fit.
+        </p>
+
+        <div class="form-checklist">
+          <label><input type="checkbox" name="services" value="Base R&R"> Base R&amp;R</label>
+          <label><input type="checkbox" name="services" value="Asphalt R&R"> Asphalt R&amp;R</label>
+          <label><input type="checkbox" name="services" value="Mill & Pave"> Mill &amp; Pave</label>
+          <label><input type="checkbox" name="services" value="Mill & Overlay"> Mill &amp; Overlay</label>
+          <label><input type="checkbox" name="services" value="Paving"> Paving</label>
+          <label><input type="checkbox" name="services" value="Infrared"> Infrared</label>
+          <label><input type="checkbox" name="services" value="Tack & Patch"> Tack &amp; Patch</label>
+          <label><input type="checkbox" name="services" value="Speed Bumps"> Speed Bumps</label>
+          <label><input type="checkbox" name="services" value="Concrete R&R"> Concrete R&amp;R</label>
+          <label><input type="checkbox" name="services" value="Concrete Install"> Concrete Install</label>
+          <label><input type="checkbox" name="services" value="Curbing"> Curbing</label>
+          <label><input type="checkbox" name="services" value="Drain Pads"> Drain Pads</label>
+          <label><input type="checkbox" name="services" value="Risers"> Risers</label>
+          <label><input type="checkbox" name="services" value="Bollards"> Bollards</label>
+          <label><input type="checkbox" name="services" value="Parking Stops"> Parking Stops</label>
+          <label><input type="checkbox" name="services" value="Joint Seal"> Joint Seal</label>
+          <label><input type="checkbox" name="services" value="Grinding"> Grinding</label>
+          <label><input type="checkbox" name="services" value="Truncated Dome Install"> Truncated Dome Install</label>
+          <label><input type="checkbox" name="services" value="Catch Basin"> Catch Basin</label>
+          <label><input type="checkbox" name="services" value="Drain Tile"> Drain Tile</label>
+          <label><input type="checkbox" name="services" value="Crack Seal"> Crack Seal</label>
+          <label><input type="checkbox" name="services" value="Sealcoating"> Sealcoating</label>
+          <label><input type="checkbox" name="services" value="Striping"> Striping</label>
+          <label><input type="checkbox" name="services" value="Signage"> Signage</label>
+          <label><input type="checkbox" name="services" value="Core Drilling"> Core Drilling</label>
+          <label><input type="checkbox" name="services" value="Other"> Other</label>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-label">Markets</div>
+
+        <h2>Where does your company normally work?</h2>
+
+        <div class="form-grid">
+          <div class="form-card full">
+            <label for="markets">States / Markets Served *</label>
+            <textarea id="markets" name="markets" required placeholder="Example: Charlotte NC, Greenville SC, Atlanta GA, western NC, all of Florida, etc."></textarea>
+            <span class="form-helper">
+              List the cities, states, counties, or markets where your company regularly performs commercial work.
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-label">Optional details</div>
+
+        <h2>Anything else Diamond should know?</h2>
+
+        <div class="form-grid">
+          <div class="form-card">
+            <label for="preferred_communication">Preferred method of communication</label>
+            <select id="preferred_communication" name="preferred_communication">
+              <option value="">Select one</option>
+              <option>Text</option>
+              <option>Email</option>
+              <option>Phone call</option>
+              <option>All of the above work</option>
+            </select>
+          </div>
+
+          <div class="form-card">
+            <label for="source">How did you hear about Diamond?</label>
+            <select id="source" name="source">
+              <option value="">Select one</option>
+              <option>Phone call from Diamond</option>
+              <option>Email from Diamond</option>
+              <option>Text from Diamond</option>
+              <option>Referral</option>
+              <option>Supplier</option>
+              <option>Website</option>
+              <option>Social media</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="form-card">
+            <label for="can_provide_coi">Can you provide a COI? *</label>
+            <select id="can_provide_coi" name="can_provide_coi" required>
+              <option value="">Select one</option>
+              <option>Yes</option>
+              <option>No</option>
+            </select>
+          </div>
+
+          <div class="form-card">
+            <label for="can_provide_w9">Can you provide a W-9? *</label>
+            <select id="can_provide_w9" name="can_provide_w9" required>
+              <option value="">Select one</option>
+              <option>Yes</option>
+              <option>No</option>
+            </select>
+          </div>
+
+          <div class="form-card range-card">
+            <div class="range-header">
+              <label for="minimum_project_size">Minimum project size</label>
+              <span class="range-value" id="minimumProjectSizeValue">$5,000</span>
+            </div>
+            <input
+              class="range-input"
+              id="minimum_project_size"
+              name="minimum_project_size"
+              type="range"
+              min="5000"
+              max="500000"
+              step="5000"
+              value="5000"
+            />
+            <div class="range-limits">
+              <span>$5k</span>
+              <span>$500k</span>
+            </div>
+            <span class="form-helper">
+              Optional. Move the slider if your company usually avoids smaller commercial work.
+            </span>
+          </div>
+
+          <div class="form-card range-card">
+            <div class="range-header">
+              <label for="maximum_project_size">Maximum project size</label>
+              <span class="range-value" id="maximumProjectSizeValue">$500,000+</span>
+            </div>
+            <input
+              class="range-input"
+              id="maximum_project_size"
+              name="maximum_project_size"
+              type="range"
+              min="5000"
+              max="500000"
+              step="5000"
+              value="500000"
+            />
+            <div class="range-limits">
+              <span>$5k</span>
+              <span>$500k+</span>
+            </div>
+            <span class="form-helper">
+              Optional. This gives Diamond a quick sense of the project size range that usually fits.
+            </span>
+          </div>
+
+          <div class="form-card full">
+            <label for="photo_link">Commercial Work Photos / Portfolio Link</label>
+            <input id="photo_link" name="photo_link" placeholder="Optional link to commercial work photos, website gallery, Facebook album, Google Drive, etc." />
+            <span class="form-helper">
+              Optional. If you have photos of completed commercial work, you can share a link here.
+            </span>
+          </div>
+
+        </div>
+
+        <div id="formMessage" class="form-message" role="status" aria-live="polite"></div>
+
+        <div class="form-actions">
+          <button class="btn btn-submit" id="submitButton" type="submit">
+            Submit Company Information →
+          </button>
+          <a class="btn btn-back" href="index.html">
+            ← Back to Overview
+          </a>
+        </div>
+
+        <p class="button-subtext">
+          Diamond may follow up if your company looks like a fit for current or future commercial work.
+        </p>
+      </section>
+    </form>
   </main>
+
+  <script>
+    // GOOGLE SHEET SETUP:
+    // 1. Create the Google Apps Script web app.
+    // 2. Paste the deployed Web App URL between the quotes below.
+    // 3. Redeploy this site.
+    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwcasttZNflvplTTYKIkcpz2w1rsy9gmE6HDFijOzO9JHDPV7YYF7PSPA8HTtS0PMYI4A/exec";
+
+    const form = document.getElementById("contractorForm");
+    const submitButton = document.getElementById("submitButton");
+    const formMessage = document.getElementById("formMessage");
+    const officeCombined = document.getElementById("officeCombined");
+
+    function buildOfficeAddress() {
+      const street = document.getElementById("street").value.trim();
+      const city = document.getElementById("city").value.trim();
+      const state = document.getElementById("state").value.trim();
+      const zip = document.getElementById("zip").value.trim();
+
+      officeCombined.value = [street, city, state, zip].filter(Boolean).join(", ");
+    }
+
+    function formatProjectSize(value, showPlusAtMax = false) {
+      const numberValue = Number(value);
+      const formatted = new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+        maximumFractionDigits: 0
+      }).format(numberValue);
+
+      return showPlusAtMax && numberValue >= 500000 ? `${formatted}+` : formatted;
+    }
+
+    function syncProjectSizeSliders(changedSlider) {
+      const minimumSlider = document.getElementById("minimum_project_size");
+      const maximumSlider = document.getElementById("maximum_project_size");
+      const minimumValue = document.getElementById("minimumProjectSizeValue");
+      const maximumValue = document.getElementById("maximumProjectSizeValue");
+
+      if (!minimumSlider || !maximumSlider || !minimumValue || !maximumValue) {
+        return;
+      }
+
+      if (changedSlider === "minimum" && Number(minimumSlider.value) > Number(maximumSlider.value)) {
+        maximumSlider.value = minimumSlider.value;
+      }
+
+      if (changedSlider === "maximum" && Number(maximumSlider.value) < Number(minimumSlider.value)) {
+        minimumSlider.value = maximumSlider.value;
+      }
+
+      minimumValue.textContent = formatProjectSize(minimumSlider.value);
+      maximumValue.textContent = formatProjectSize(maximumSlider.value, true);
+    }
+
+    const minimumProjectSizeSlider = document.getElementById("minimum_project_size");
+    const maximumProjectSizeSlider = document.getElementById("maximum_project_size");
+
+    if (minimumProjectSizeSlider && maximumProjectSizeSlider) {
+      minimumProjectSizeSlider.addEventListener("input", () => syncProjectSizeSliders("minimum"));
+      maximumProjectSizeSlider.addEventListener("input", () => syncProjectSizeSliders("maximum"));
+      syncProjectSizeSliders();
+    }
+
+    form.addEventListener("submit", async function (event) {
+      buildOfficeAddress();
+
+      if (!GOOGLE_SCRIPT_URL) {
+        return;
+      }
+
+      event.preventDefault();
+
+      formMessage.className = "form-message";
+      formMessage.textContent = "";
+      submitButton.disabled = true;
+      submitButton.textContent = "Submitting...";
+
+      try {
+        const formData = new FormData(form);
+
+        await fetch(GOOGLE_SCRIPT_URL, {
+          method: "POST",
+          mode: "no-cors",
+          body: formData
+        });
+
+        window.location.href = "thank-you.html";
+      } catch (error) {
+        submitButton.disabled = false;
+        submitButton.textContent = "Submit Company Information →";
+        formMessage.className = "form-message error";
+        formMessage.textContent = "Something went wrong. Please try again or contact Diamond Solutions directly.";
+      }
+    });
+  </script>
 </body>
+</html>
