@@ -172,6 +172,34 @@
       text-align: center;
     }
 
+
+    .missing-fields-box {
+      display: none;
+      margin-top: 18px;
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: #fff7ed;
+      border: 1px solid #fed7aa;
+      color: #9a3412;
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .missing-fields-box strong {
+      display: block;
+      margin-bottom: 6px;
+      color: #7c2d12;
+    }
+
+    .missing-fields-box ul {
+      margin: 8px 0 0;
+      padding-left: 20px;
+    }
+
+    .missing-fields-box li {
+      margin-bottom: 4px;
+    }
+
     @media (max-width: 720px) {
   
     .range-card {
@@ -483,6 +511,8 @@
 
         </div>
 
+        <div id="missingFieldsBox" class="missing-fields-box" role="alert" aria-live="assertive"></div>
+
         <div id="formMessage" class="form-message" role="status" aria-live="polite"></div>
 
         <div class="form-actions">
@@ -564,8 +594,61 @@
       syncProjectSizeSliders();
     }
 
+    function getMissingRequiredFields() {
+      const requiredFields = Array.from(form.querySelectorAll("[required]"));
+
+      return requiredFields
+        .filter((field) => !String(field.value || "").trim())
+        .map((field) => {
+          const label = form.querySelector(`label[for="${field.id}"]`);
+          return {
+            field,
+            label: label ? label.textContent.replace("*", "").trim() : field.name
+          };
+        });
+    }
+
+    function showMissingFields(missingFields) {
+      const missingFieldsBox = document.getElementById("missingFieldsBox");
+
+      if (!missingFieldsBox) return;
+
+      if (!missingFields.length) {
+        missingFieldsBox.style.display = "none";
+        missingFieldsBox.innerHTML = "";
+        return;
+      }
+
+      missingFieldsBox.style.display = "block";
+      missingFieldsBox.innerHTML = `
+        <strong>Please complete the required fields below before submitting:</strong>
+        <ul>
+          ${missingFields.map((item) => `<li>${item.label}</li>`).join("")}
+        </ul>
+      `;
+
+      missingFieldsBox.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
+
+      setTimeout(() => {
+        missingFields[0].field.focus();
+      }, 350);
+    }
+
     form.addEventListener("submit", async function (event) {
       buildOfficeAddress();
+
+      const missingFields = getMissingRequiredFields();
+
+      if (missingFields.length) {
+        event.preventDefault();
+        showMissingFields(missingFields);
+        return;
+      }
+
+      showMissingFields([]);
 
       if (!GOOGLE_SCRIPT_URL) {
         return;
